@@ -295,24 +295,27 @@ body {
     justify-content: flex-start;
     gap: 20px;
     position: relative;
-    background-color: #05171a; /* Novedad: Un color de fondo más específico para esta tarjeta */
+    background-color: #0d383f; /* Novedad: Un color de fondo más específico para esta tarjeta */
+    border: 2px solid var(--accent-color); /* Novedad: Borde más grueso y del color de acento */
+    box-shadow: 0 0 15px var(--shadow-color); /* Novedad: Sombra más pronunciada */
 }
 
 .availability-status h3 {
     color: var(--accent-color);
-    text-shadow: 0 0 5px rgba(1, 11, 12, 0.4); /* Novedad: Pequeña sombra en el texto */
+    text-shadow: 0 0 5px rgba(0, 188, 212, 0.4); /* Novedad: Pequeña sombra en el texto */
 }
 
 .status-dot {
     width: 16px; /* Modificado: Punto más grande */
     height: 16px;
+    background-color: var(--accent-color);
     border-radius: 50%;
     position: absolute;
     right: 25px; /* Modificado: Posición */
     top: 50%;
     transform: translateY(-50%);
-    box-shadow: 0 0 10px gray /* Novedad: Resplandor más fuerte */
-
+    box-shadow: 0 0 12px var(--accent-color); /* Novedad: Resplandor más fuerte */
+    animation: pulse 1.5s infinite ease-out; /* Novedad: Animación de pulsación */
 }
 
 /* Novedad: Animación para el punto de disponibilidad */
