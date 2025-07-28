@@ -1,0 +1,420 @@
+/* General Styling */
+:root {
+    --bg-primary: #121212; /* Fondo muy oscuro */
+    --bg-secondary: #1e1e1e; /* Elementos ligeramente más claros */
+    --text-primary: #e0e0e0; /* Texto principal claro */
+    --text-secondary: #a0a0a0; /* Texto secundario/desactivado */
+    --accent-color: #00bcd4; /* Azul verdoso vibrante (anteriormente verde) */
+    --border-color: #2a2a2a; /* Color de borde sutil */
+    --shadow-color: rgba(0, 188, 212, 0.2); /* Sombra con el color de acento */
+    --card-hover-bg: #282828; /* Fondo de tarjeta al pasar el ratón */
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Novedad: Cambiada la fuente principal */
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    display: grid;
+    gap: 25px; /* Modificado: Espaciado general */
+    width: 100%;
+    max-width: 1280px; /* Modificado: Ancho máximo un poco más amplio */
+    grid-template-columns: 2.5fr 1.5fr; /* Modificado: Proporción de columnas */
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "hero sidebar-info"
+        "main-sections sidebar-info"
+        "portfolio-showcase sidebar-info";
+}
+
+/* Hero/Header Section */
+.hero-section {
+    grid-area: hero;
+    background-color: var(--bg-secondary);
+    border-radius: 15px; /* Modificado: Bordes más redondeados */
+    padding: 35px; /* Modificado: Más padding */
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Modificado: Más espacio entre texto e imagen */
+    border: 1px solid var(--border-color); /* Novedad: Borde sutil */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+.hero-content {
+    flex-grow: 1;
+}
+
+.hero-content p {
+    font-size: 1.15em; /* Modificado: Texto ligeramente más grande */
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.hero-content strong {
+    color: var(--accent-color); /* Novedad: Resaltado con el nuevo color de acento */
+}
+
+.social-links { /* Modificado: Clase de los iconos sociales */
+    display: flex;
+    gap: 20px; /* Modificado: Más espacio entre iconos */
+}
+
+.icon-btn { /* Novedad: Estilo de botón para los iconos */
+    color: var(--text-primary);
+    font-size: 1.6em; /* Modificado: Iconos más grandes */
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 8px; /* Para hacer el área de click más grande */
+    border-radius: 50%;
+}
+
+.icon-btn:hover {
+    color: var(--accent-color); /* Novedad: Hover con acento */
+    transform: translateY(-3px) scale(1.05); /* Novedad: Efecto de levantamiento y escala */
+}
+
+.hero-image img {
+    width: 120px; /* Modificado: Imagen un poco más grande */
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color); /* Novedad: Borde con color de acento */
+    box-shadow: 0 0 20px var(--shadow-color); /* Novedad: Sombra que "brilla" */
+}
+
+/* Sidebar */
+.sidebar-info { /* Novedad: Clase para la barra lateral */
+    grid-area: sidebar-info;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Modificado: Espaciado */
+}
+
+.credit-box { /* Modificado: Clase para el footer/copyright */
+    background-color: var(--bg-secondary);
+    border-radius: 15px; /* Modificado */
+    padding: 25px; /* Modificado */
+    text-align: center;
+    font-size: 0.95em; /* Modificado */
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color); /* Novedad */
+}
+
+.credit-box p {
+    margin: 8px 0; /* Modificado */
+}
+
+.heart-icon { /* Modificado: Clase para el icono del corazón */
+    color: #e53e3e; /* Rojo */
+    font-size: 1.1em;
+}
+
+.about-section { /* Novedad: Clase para la sección "Sobre mí" */
+    background-color: var(--bg-secondary);
+    border-radius: 15px; /* Modificado */
+    padding: 35px; /* Modificado */
+    border: 1px solid var(--border-color); /* Novedad */
+}
+
+.about-section h2 {
+    color: var(--accent-color); /* Novedad: Título con acento */
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 2em; /* Modificado: Título más grande */
+    text-align: center; /* Novedad: Centrar título */
+}
+
+.about-section p {
+    font-size: 1.05em; /* Modificado: Texto ligeramente más grande */
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.about-section p code {
+    background-color: #3b3b3b; /* Novedad: Fondo para código */
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-family: 'Source Code Pro', monospace; /* Novedad: Fuente de código */
+    color: #8be9fd; /* Novedad: Color de texto para código */
+}
+
+.tech-stack { /* Novedad: Clase para las habilidades */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px; /* Modificado: Más espacio entre tags */
+    margin-top: 20px;
+    justify-content: center; /* Novedad: Centrar tags */
+}
+
+.tech-tag { /* Novedad: Estilo de los tags de tecnología */
+    background-color: #333333; /* Fondo más oscuro para los tags */
+    color: #c9f0f9; /* Color de texto claro azulado para los tags */
+    padding: 10px 15px; /* Modificado: Más padding */
+    border-radius: 8px; /* Modificado: Más redondeado */
+    font-size: 0.95em; /* Modificado */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Modificado */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 1px solid #4a4a4a; /* Novedad: Borde en los tags */
+}
+
+.tech-tag:hover {
+    background-color: var(--accent-color); /* Novedad: Hover con color de acento */
+    color: var(--bg-primary); /* Novedad: Texto oscuro en hover */
+    transform: translateY(-2px);
+}
+
+/* Main Content */
+.main-sections { /* Novedad: Clase para las secciones principales */
+    grid-area: main-sections; /* Usado para la educación */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.education-timeline { /* Novedad: Clase para la sección de educación */
+    background-color: var(--bg-secondary);
+    border-radius: 15px; /* Modificado */
+    padding: 35px; /* Modificado */
+    border: 1px solid var(--border-color); /* Novedad */
+}
+
+.education-timeline h2 {
+    color: var(--accent-color); /* Novedad: Título con acento */
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 2em; /* Modificado: Título más grande */
+    text-align: center; /* Novedad: Centrar título */
+}
+
+.edu-entry { /* Novedad: Clase para cada entrada de educación */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 20px;
+    border-left: 2px solid var(--border-color); /* Novedad: Línea de tiempo */
+    padding-left: 25px;
+}
+
+.edu-entry:last-child {
+    border-left: none; /* Eliminar línea para el último elemento */
+    padding-bottom: 0;
+}
+
+.edu-entry::before { /* Novedad: Círculo en la línea de tiempo */
+    content: '';
+    position: absolute;
+    left: -8px; /* Alinea el círculo con la línea */
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    border: 3px solid var(--bg-secondary); /* Borde para que se vea sobre la línea */
+}
+
+.edu-entry h3 {
+    margin: 0;
+    font-size: 1.3em; /* Modificado */
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.edu-entry p {
+    margin: 0;
+    font-size: 1em; /* Modificado */
+    color: var(--text-secondary);
+}
+
+.edu-entry .edu-year { /* Novedad: Clase para el año */
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1em; /* Modificado */
+    color: var(--text-secondary);
+    background-color: var(--bg-secondary); /* Para que el año no se superponga con la línea */
+    padding-left: 10px;
+}
+
+
+/* Projects Section */
+.portfolio-showcase { /* Novedad: Clase para la sección de proyectos */
+    grid-area: portfolio-showcase; /* Ahora esta sección tiene su propia área si el grid lo permite */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Modificado: Tarjetas más grandes */
+    gap: 20px;
+}
+
+.project-item { /* Novedad: Estilo de las tarjetas de proyecto */
+    background-color: var(--bg-secondary);
+    border-radius: 15px; /* Modificado */
+    padding: 25px; /* Modificado */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    border: 1px solid var(--border-color); /* Novedad: Borde en las tarjetas */
+}
+
+.project-item:hover {
+    transform: translateY(-8px); /* Modificado: Más levantamiento */
+    background-color: var(--card-hover-bg); /* Novedad: Nuevo color de hover */
+    border-color: var(--accent-color); /* Novedad: Borde se ilumina */
+}
+
+.project-item h3 {
+    margin: 0;
+    font-size: 1.25em; /* Modificado: Título más grande */
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.project-item p {
+    margin: 0;
+    font-size: 0.95em; /* Modificado */
+    color: var(--text-secondary);
+}
+
+.project-item .fa-arrow-right { /* Novedad: Flecha en lugar del icono de enlace externo */
+    color: var(--accent-color);
+    font-size: 1.5em; /* Modificado: Flecha más grande */
+}
+
+.availability-status { /* Novedad: Clase para la tarjeta de disponibilidad */
+    justify-content: flex-start;
+    gap: 20px;
+    position: relative;
+    background-color: #05171a; /* Novedad: Un color de fondo más específico para esta tarjeta */
+}
+
+.availability-status h3 {
+    color: var(--accent-color);
+    text-shadow: 0 0 5px rgba(1, 11, 12, 0.4); /* Novedad: Pequeña sombra en el texto */
+}
+
+.status-dot {
+    width: 16px; /* Modificado: Punto más grande */
+    height: 16px;
+    border-radius: 50%;
+    position: absolute;
+    right: 25px; /* Modificado: Posición */
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 10px gray /* Novedad: Resplandor más fuerte */
+
+}
+
+/* Novedad: Animación para el punto de disponibilidad */
+@keyframes pulse {
+    0% {
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-50%) scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) { /* Novedad: Breakpoint para tablets */
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "hero"
+            "sidebar-info"
+            "main-sections"
+            "portfolio-showcase";
+    }
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .hero-image {
+        order: -1;
+        margin-bottom: 0;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .edu-entry .edu-year {
+        position: static;
+        margin-top: 10px;
+        text-align: left;
+        padding-left: 0;
+    }
+
+    .edu-entry {
+        padding-left: 20px;
+    }
+
+    .edu-entry::before {
+        left: -5px;
+    }
+}
+
+@media (max-width: 600px) { /* Novedad: Breakpoint para móviles más pequeños */
+    body {
+        padding: 15px;
+    }
+
+    .hero-section,
+    .about-section,
+    .education-timeline,
+    .credit-box {
+        padding: 25px; /* Reducir padding en pantallas pequeñas */
+        border-radius: 10px;
+    }
+
+    .hero-content p,
+    .about-section p {
+        font-size: 1em;
+    }
+
+    .about-section h2,
+    .education-timeline h2 {
+        font-size: 1.7em;
+    }
+
+    .tech-stack {
+        justify-content: flex-start; /* Permitir que los tags fluyan en móviles */
+    }
+
+    .portfolio-showcase {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+
+    .project-item {
+        flex-direction: column; /* Apilar contenido de las tarjetas */
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .project-item .fa-arrow-right {
+        align-self: flex-end; /* Mover flecha a la derecha */
+    }
+
+    .availability-status .status-dot {
+        right: 15px;
+    }
+}
