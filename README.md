@@ -13,7 +13,6 @@
  *   **Backend:** Node.js
  *   **Framework:** Express.js (Versión 5.x)
  *   **Motor de Plantillas:** EJS (Embedded JavaScript templates) para renderizar vistas dinámicas.
- *   **Middleware:** Morgan para el registro de peticiones HTTP.
  *   **Herramientas de Desarrollo:** Nodemon para reiniciar el servidor automáticamente durante el desarrollo, mejorando el flujo de trabajo.
 
  ## 🛠️ Instalación y Configuración
